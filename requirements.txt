@@ -1,0 +1,22 @@
+# Core data stack
+pandas>=2.2,<4
+numpy>=1.26
+pyarrow>=15
+requests>=2.31
+curl-cffi>=0.7          # browser TLS fingerprint - Wikipedia blocks plain requests
+lxml>=5
+beautifulsoup4>=4.12
+
+# Market data
+yfinance>=0.2.50
+
+# Modelling
+# NOTE: scikit-learn is pinned to 1.7.x on purpose. From 1.8.0 onwards the
+# RandomForest implementation changed and the Homework 4 simulation no longer
+# reproduces the reference numbers published in the Module 04 notebook
+# (pred10_rf_best_rule_55: 3,130 trades instead of 3,111; CAGR 1.1108 vs 1.0936).
+scikit-learn==1.7.2
+
+# Stats
+scipy>=1.11
+statsmodels>=0.14

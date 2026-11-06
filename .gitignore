@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files (fetch them with scripts/download_data.py)
+data/
+*.parquet
+*.parquet.brotli
+*.npy
+
+# OS
+.DS_Store
