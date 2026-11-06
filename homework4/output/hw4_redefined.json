@@ -1,0 +1,16 @@
+{
+  "redefined": {
+    "n_features": 301,
+    "pred5_clf_10": {
+      "count_investments": 7337.0,
+      "gross_rev": 18975.555556737232,
+      "fees": -1467.400146484375,
+      "net_rev": 17508.155410252857,
+      "avg_net_rev_per_investment": 2.3862825964635217,
+      "avg_investments_per_day": 8.009825327510917,
+      "q75_investments_per_day": 10.0,
+      "capital": 30000.0,
+      "CAGR": 1.1217904241092584
+    }
+  }
+}

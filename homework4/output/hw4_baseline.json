@@ -1,0 +1,152 @@
+{
+  "baseline": {
+    "n_features": 301,
+    "pred10_cagr": 1.093571344852016,
+    "simulation": [
+      {
+        "prediction": "pred0_manual_cci",
+        "count_investments": 921,
+        "gross_rev": 1839.3928530698,
+        "fees": -184.2,
+        "net_rev": 1655.1928530698,
+        "avg_net_rev_per_investment": 1.7971692216,
+        "avg_investments_per_day": 1.8757637475,
+        "q75_investments_per_day": 2.0,
+        "capital": 6000.0,
+        "CAGR": 1.0627992064
+      },
+      {
+        "prediction": "pred1_manual_prev_g1",
+        "count_investments": 19158,
+        "gross_rev": 44647.3668848429,
+        "fees": -3831.6,
+        "net_rev": 40815.7668848429,
+        "avg_net_rev_per_investment": 2.1304816205,
+        "avg_investments_per_day": 18.4211538462,
+        "q75_investments_per_day": 24.0,
+        "capital": 72000.0,
+        "CAGR": 1.1188176935
+      },
+      {
+        "prediction": "pred2_manual_prev_g1_and_snp",
+        "count_investments": 15244,
+        "gross_rev": 33808.0942464822,
+        "fees": -3048.8,
+        "net_rev": 30759.2942464822,
+        "avg_net_rev_per_investment": 2.0177967887,
+        "avg_investments_per_day": 21.7150997151,
+        "q75_investments_per_day": 25.0,
+        "capital": 75000.0,
+        "CAGR": 1.0897184906
+      },
+      {
+        "prediction": "pred3_manual_dgs10_5",
+        "count_investments": 15910,
+        "gross_rev": 40723.8030211233,
+        "fees": -3182.0,
+        "net_rev": 37541.8030211233,
+        "avg_net_rev_per_investment": 2.3596356393,
+        "avg_investments_per_day": 31.9477911647,
+        "q75_investments_per_day": 33.0,
+        "capital": 99000.0,
+        "CAGR": 1.0836963477
+      },
+      {
+        "prediction": "pred4_manual_dgs10_fedfunds",
+        "count_investments": 15921,
+        "gross_rev": 18532.8799897011,
+        "fees": -3184.2,
+        "net_rev": 15348.6799897011,
+        "avg_net_rev_per_investment": 0.9640525086,
+        "avg_investments_per_day": 31.9058116232,
+        "q75_investments_per_day": 33.0,
+        "capital": 99000.0,
+        "CAGR": 1.0366901932
+      },
+      {
+        "prediction": "pred5_clf_10",
+        "count_investments": 9861,
+        "gross_rev": 29377.352313668,
+        "fees": -1972.2001953125,
+        "net_rev": 27405.1521183555,
+        "avg_net_rev_per_investment": 2.7791453319,
+        "avg_investments_per_day": 10.2611862643,
+        "q75_investments_per_day": 16.0,
+        "capital": 48000.0,
+        "CAGR": 1.1195408524
+      },
+      {
+        "prediction": "pred6_clf_4",
+        "count_investments": 6677,
+        "gross_rev": 22383.4460466564,
+        "fees": -1335.4001464844,
+        "net_rev": 21048.045900172,
+        "avg_net_rev_per_investment": 3.1523207878,
+        "avg_investments_per_day": 30.35,
+        "q75_investments_per_day": 33.0,
+        "capital": 99000.0,
+        "CAGR": 1.049373216
+      },
+      {
+        "prediction": "pred7_clf_second_best",
+        "count_investments": 4196,
+        "gross_rev": 15901.0545604732,
+        "fees": -839.2001342773,
+        "net_rev": 15061.8544261958,
+        "avg_net_rev_per_investment": 3.5895744581,
+        "avg_investments_per_day": 10.8144329897,
+        "q75_investments_per_day": 17.0,
+        "capital": 51000.0,
+        "CAGR": 1.0668298189
+      },
+      {
+        "prediction": "pred8_clf_second_best_rule_56",
+        "count_investments": 4183,
+        "gross_rev": 15881.1520080706,
+        "fees": -836.6,
+        "net_rev": 15044.5520080706,
+        "avg_net_rev_per_investment": 3.5965938341,
+        "avg_investments_per_day": 10.8087855297,
+        "q75_investments_per_day": 17.0,
+        "capital": 51000.0,
+        "CAGR": 1.0667599581
+      },
+      {
+        "prediction": "pred9_clf_second_best_rule_66",
+        "count_investments": 2185,
+        "gross_rev": 6834.1627289675,
+        "fees": -437.0,
+        "net_rev": 6397.1627289675,
+        "avg_net_rev_per_investment": 2.9277632627,
+        "avg_investments_per_day": 6.2787356322,
+        "q75_investments_per_day": 8.0,
+        "capital": 24000.0,
+        "CAGR": 1.0608535931
+      },
+      {
+        "prediction": "pred10_rf_best_rule_55",
+        "count_investments": 3111,
+        "gross_rev": 12236.8632005343,
+        "fees": -622.2,
+        "net_rev": 11614.6632005343,
+        "avg_net_rev_per_investment": 3.7334179365,
+        "avg_investments_per_day": 6.577167019,
+        "q75_investments_per_day": 9.0,
+        "capital": 27000.0,
+        "CAGR": 1.0935713449
+      },
+      {
+        "prediction": "pred11_rf_best_rule_65",
+        "count_investments": 39,
+        "gross_rev": 270.4570502267,
+        "fees": -7.8,
+        "net_rev": 262.6570502267,
+        "avg_net_rev_per_investment": 6.7347961597,
+        "avg_investments_per_day": 1.56,
+        "q75_investments_per_day": 2.0,
+        "capital": 6000.0,
+        "CAGR": 1.0107688397
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "q1": {
+    "question": "Find the CAGR for the pred10_rf_best_rule_55 using the new setup (with fewer dummy variables).",
+    "n_features_original_setup": 301,
+    "n_features_new_setup": 208,
+    "cagr_original_setup": 1.093571344852016,
+    "cagr_new_setup": 1.1358603966077971,
+    "notebook_reference_original_cagr": 1.1195,
+    "selected_option": 1.136,
+    "best_predictor_new_setup": "pred10_rf_best_rule_55"
+  },
+  "q2": {
+    "question": "What is the probability threshold for the second-best Random Forest decision rule, if you want to have the number of average trades per day BELOW 5?",
+    "rf_rules": {
+      "pred10_rf_best_rule_55": {
+        "threshold": 0.55,
+        "count_investments": 3514,
+        "avg_investments_per_day": 5.1600587372,
+        "q75_investments_per_day": 6.0,
+        "capital": 18000.0,
+        "CAGR": 1.1358603966,
+        "under_5_trades_per_day": false
+      },
+      "pred11_rf_best_rule_65": {
+        "threshold": 0.65,
+        "count_investments": 31,
+        "avg_investments_per_day": 1.347826087,
+        "q75_investments_per_day": 1.0,
+        "capital": 3000.0,
+        "CAGR": 1.0057242406,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_56": {
+        "threshold": 0.56,
+        "count_investments": 2641,
+        "avg_investments_per_day": 4.4016666667,
+        "q75_investments_per_day": 5.0,
+        "capital": 15000.0,
+        "CAGR": 1.1177197372,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_57": {
+        "threshold": 0.57,
+        "count_investments": 1889,
+        "avg_investments_per_day": 3.8084677419,
+        "q75_investments_per_day": 5.0,
+        "capital": 15000.0,
+        "CAGR": 1.0912083067,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_58": {
+        "threshold": 0.58,
+        "count_investments": 1330,
+        "avg_investments_per_day": 3.4635416667,
+        "q75_investments_per_day": 5.0,
+        "capital": 15000.0,
+        "CAGR": 1.066453396,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_59": {
+        "threshold": 0.59,
+        "count_investments": 899,
+        "avg_investments_per_day": 3.0787671233,
+        "q75_investments_per_day": 4.0,
+        "capital": 12000.0,
+        "CAGR": 1.0613092604,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_60": {
+        "threshold": 0.6,
+        "count_investments": 583,
+        "avg_investments_per_day": 2.7761904762,
+        "q75_investments_per_day": 4.0,
+        "capital": 12000.0,
+        "CAGR": 1.0441947839,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_61": {
+        "threshold": 0.61,
+        "count_investments": 352,
+        "avg_investments_per_day": 2.5142857143,
+        "q75_investments_per_day": 3.25,
+        "capital": 9750.0,
+        "CAGR": 1.0402432475,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_62": {
+        "threshold": 0.62,
+        "count_investments": 204,
+        "avg_investments_per_day": 2.0816326531,
+        "q75_investments_per_day": 3.0,
+        "capital": 9000.0,
+        "CAGR": 1.0258518552,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_63": {
+        "threshold": 0.63,
+        "count_investments": 123,
+        "avg_investments_per_day": 1.6849315068,
+        "q75_investments_per_day": 2.0,
+        "capital": 6000.0,
+        "CAGR": 1.0193422262,
+        "under_5_trades_per_day": true
+      },
+      "pred_rf_best_rule_64": {
+        "threshold": 0.64,
+        "count_investments": 65,
+        "avg_investments_per_day": 1.4444444444,
+        "q75_investments_per_day": 2.0,
+        "capital": 6000.0,
+        "CAGR": 1.0088592249,
+        "under_5_trades_per_day": true
+      }
+    },
+    "best_under_5_trades_per_day": "pred_rf_best_rule_56",
+    "selected_threshold": 0.56,
+    "selected_option": 0.56,
+    "cagr_at_selected_threshold": 1.1177197372,
+    "avg_trades_per_day_at_selected_threshold": 4.4016666667,
+    "cagr_of_unconstrained_best": 1.1358603966
+  },
+  "q3": {
+    "question": "What is the number of trades for the best predictor pred5_clf_10 (after redefining the target variable)?",
+    "n_features": 301,
+    "count_investments": 7337.0,
+    "avg_investments_per_day": 8.009825327510917,
+    "q75_investments_per_day": 10.0,
+    "capital": 30000.0,
+    "CAGR": 1.1217904241092584,
+    "net_rev": 17508.155410252857,
+    "selected_option": 8
+  }
+}
