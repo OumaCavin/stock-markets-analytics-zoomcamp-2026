@@ -1,0 +1,110 @@
+{
+  "q1": {
+    "question": "What is the ABSOLUTE CORRELATION VALUE of the most correlated dummy variable _w<week_of_month> with the binary outcome is_positive_growth_30d_future?",
+    "n_dummies_total": 115,
+    "n_month_wom_dummies": 60,
+    "n_features_total": 299,
+    "top10": [
+      {
+        "dummy": "month_wom_October_w4",
+        "corr": 0.02458416756158805,
+        "abs_corr": 0.02458416756158805
+      },
+      {
+        "dummy": "month_wom_November_w3",
+        "corr": 0.023251144359701333,
+        "abs_corr": 0.023251144359701333
+      },
+      {
+        "dummy": "month_wom_February_w1",
+        "corr": -0.020861029269195676,
+        "abs_corr": 0.020861029269195676
+      },
+      {
+        "dummy": "month_wom_January_w2",
+        "corr": -0.01984644149477966,
+        "abs_corr": 0.01984644149477966
+      },
+      {
+        "dummy": "month_wom_January_w5",
+        "corr": -0.0197920614584667,
+        "abs_corr": 0.0197920614584667
+      },
+      {
+        "dummy": "month_wom_November_w2",
+        "corr": 0.01910344022196118,
+        "abs_corr": 0.01910344022196118
+      },
+      {
+        "dummy": "month_wom_January_w3",
+        "corr": -0.01853697602510283,
+        "abs_corr": 0.01853697602510283
+      },
+      {
+        "dummy": "month_wom_February_w2",
+        "corr": -0.01834019424103749,
+        "abs_corr": 0.01834019424103749
+      },
+      {
+        "dummy": "month_wom_January_w4",
+        "corr": -0.01826472560590151,
+        "abs_corr": 0.01826472560590151
+      },
+      {
+        "dummy": "month_wom_October_w3",
+        "corr": 0.017855837460637826,
+        "abs_corr": 0.017855837460637826
+      }
+    ],
+    "max_abs_corr": 0.02458416756158805,
+    "max_abs_corr_rounded": 0.025,
+    "top_dummy": "month_wom_October_w4"
+  },
+  "q2": {
+    "question": "What is the precision score for the best of the NEW predictions (pred3 or pred4), rounded to 3 digits after the comma?",
+    "per_rule": {
+      "pred3_manual_dgs10_5": {
+        "n_flagged_test": 15910,
+        "true_positives": 9351,
+        "precision": 0.5877435575109994,
+        "precision_rounded": 0.588
+      },
+      "pred4_manual_dgs10_fedfunds": {
+        "n_flagged_test": 15921,
+        "true_positives": 8001,
+        "precision": 0.5025438100621821,
+        "precision_rounded": 0.503
+      }
+    },
+    "best_rule": "pred3_manual_dgs10_5",
+    "best_precision": 0.5877435575109994,
+    "best_precision_rounded": 0.588
+  },
+  "q3": {
+    "question": "What is the total number of records in the TEST dataset where the new prediction pred5_clf_10 is correct, while all 'hand' rule predictions (pred0 to pred4) are incorrect?",
+    "n_test_records": 33163,
+    "only_pred5_is_correct_test": 1171,
+    "only_pred5_is_correct_all_splits": 5227,
+    "generic_function_result_test": 1171
+  },
+  "q4": {
+    "question": "What is the optimal tree depth (from 1 to 12) for a DecisionTreeClassifier?",
+    "precision_by_depth": {
+      "1": 0.5701,
+      "2": 0.6225,
+      "3": 0.572,
+      "4": 0.6292,
+      "5": 0.5991,
+      "6": 0.5966,
+      "7": 0.6229,
+      "8": 0.6194,
+      "9": 0.5956,
+      "10": 0.5993,
+      "11": 0.598,
+      "12": 0.5744
+    },
+    "best_max_depth": 4,
+    "best_precision": 0.6292,
+    "n_features": 299
+  }
+}
