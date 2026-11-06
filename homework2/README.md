@@ -47,13 +47,24 @@ Two caveats worth stating plainly:
 
 * The assignment says "32 entries". Today the live page exposes only **28** withdrawn IPOs
   filed before 2026-09-11 — the page keeps a rolling 500-row window, so the four oldest
-  rows (filed between roughly December 2025 and February 2026) have rolled off. The
-  answer is robust to their return: to overtake *Acquisition Corp* the *Inc.* class would
-  need an extra $135M in a single older filing, and the four missing rows would have to
-  land in that one class.
-* The ordering rules behave exactly as the assignment describes: "EUPEC International
-  Group Ltd." → **Group** (the *Group* rule precedes *Ltd*), and "Xinxu Copper Industry
-  Technology Ltd." → **Limited** (because "Technology" does not match "Technologies").
+  rows have rolled off. The missing rows can be identified from the withdrawal record:
+  iposcoop dates a withdrawn filing by its **withdrawal** date (Clear Street's *File Date*
+  is 2026-02-19, the day of its RW filing, not its January S-1), so the four lost rows are
+  IPOs withdrawn between roughly December 2025 and 12 February 2026. The candidates in that
+  window are **EvoNexus Group Ltd** (withdrawn 13 Jan 2026), **SFIDA X, Inc.** (27 Jan),
+  **Liftoff Mobile, Inc.** (17 Feb — the withdrawn $762M attempt, [per the IPO
+  tracker](https://segmara.com/withdrawn-ipos)), **INNOCAN PHARMA Corp** (23 Feb) and
+  **Edison Oncology Holding Corp** (27 Feb, ~$25M).
+* **The answer is robust to which four rows are missing.** Rows can only *add* to a class
+  total, never subtract. The visible *Acquisition Corp* total is already $485M, and the
+  midpoint between the 400 and 500 options is $450M — so no combination of additional
+  withdrawn IPOs can push the winning class below the 500 option. Adding Edison Oncology
+  (name contains "Corp" → *Acquisition Corp*) and INNOCAN PHARMA Corp would take it to
+  roughly $526M, still the leading class and still the 500 option.
+
+The ordering rules behave exactly as the assignment describes: "EUPEC International
+Group Ltd." → **Group** (the *Group* rule precedes *Ltd*), and "Xinxu Copper Industry
+Technology Ltd." → **Limited** (because "Technology" does not match "Technologies").
 
 The single largest contributor is *Clear Street Group Inc.* ($351M: 13.0M shares at
 $26–28), classified as *Inc.* — the rule ordering puts *Inc* ahead of *Group*.
