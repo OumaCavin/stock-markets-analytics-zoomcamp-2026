@@ -1,0 +1,395 @@
+{
+  "q1": {
+    "question": "What is the total withdrawn IPO value (in $ millions) for the company class with the highest total withdrawal value?",
+    "n_withdrawn_rows_before_2026_09_11": 28,
+    "top_class": "Acquisition Corp",
+    "top_class_total_value_musd": 485.0,
+    "by_class": {
+      "Acquisition Corp": {
+        "count": 4,
+        "total_musd": 485.0
+      },
+      "Inc.": {
+        "count": 1,
+        "total_musd": 351.0
+      },
+      "Holdings": {
+        "count": 4,
+        "total_musd": 311.6575
+      },
+      "Other": {
+        "count": 7,
+        "total_musd": 284.945
+      },
+      "Limited": {
+        "count": 6,
+        "total_musd": 191.25
+      },
+      "Technologies": {
+        "count": 3,
+        "total_musd": 184.9
+      },
+      "Group": {
+        "count": 3,
+        "total_musd": 32.5
+      }
+    },
+    "rows": [
+      {
+        "File Date": "2026-09-10 00:00:00",
+        "Company": "Motive Technologies (Withdrawn)",
+        "Company Type": "Technologies",
+        "Shares (millions)": 0.0,
+        "Avg_price": NaN,
+        "Est Vol (millions)": 100.0,
+        "Shares_offered_value": 100.0
+      },
+      {
+        "File Date": "2026-09-04 00:00:00",
+        "Company": "Idea Tech Holding (Withdrawn)",
+        "Company Type": "Holdings",
+        "Shares (millions)": 2.0,
+        "Avg_price": 4.5,
+        "Est Vol (millions)": 9.0,
+        "Shares_offered_value": 9.0
+      },
+      {
+        "File Date": "2026-09-01 00:00:00",
+        "Company": "Hornbeck Offshore Services (Withdrawn)",
+        "Company Type": "Other",
+        "Shares (millions)": 0.0,
+        "Avg_price": NaN,
+        "Est Vol (millions)": 100.0,
+        "Shares_offered_value": 100.0
+      },
+      {
+        "File Date": "2026-08-31 00:00:00",
+        "Company": "Coolbit Technologies Ltd. (Withdrawn)",
+        "Company Type": "Technologies",
+        "Shares (millions)": 5.0,
+        "Avg_price": 4.5,
+        "Est Vol (millions)": 22.5,
+        "Shares_offered_value": 22.5
+      },
+      {
+        "File Date": "2026-08-27 00:00:00",
+        "Company": "Timber Road Acquisition Corp. (Withdrawn)",
+        "Company Type": "Acquisition Corp",
+        "Shares (millions)": 20.0,
+        "Avg_price": 10.0,
+        "Est Vol (millions)": 200.0,
+        "Shares_offered_value": 200.0
+      },
+      {
+        "File Date": "2026-08-24 00:00:00",
+        "Company": "pan-Africa Corp. (Withdrawn)",
+        "Company Type": "Acquisition Corp",
+        "Shares (millions)": 12.5,
+        "Avg_price": 10.0,
+        "Est Vol (millions)": 125.0,
+        "Shares_offered_value": 125.0
+      },
+      {
+        "File Date": "2026-08-18 00:00:00",
+        "Company": "Living Homeopathy (Withdrawn)",
+        "Company Type": "Other",
+        "Shares (millions)": 3.75,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 19.0,
+        "Shares_offered_value": 18.75
+      },
+      {
+        "File Date": "2026-07-31 00:00:00",
+        "Company": "Nuclea Energy (Withdrawn)",
+        "Company Type": "Other",
+        "Shares (millions)": 5.6,
+        "Avg_price": 9.0,
+        "Est Vol (millions)": 50.4,
+        "Shares_offered_value": 50.4
+      },
+      {
+        "File Date": "2026-07-10 00:00:00",
+        "Company": "APEX Global Solutions Ltd. (WITHDRAWN)",
+        "Company Type": "Limited",
+        "Shares (millions)": 3.75,
+        "Avg_price": 4.0,
+        "Est Vol (millions)": 15.0,
+        "Shares_offered_value": 15.0
+      },
+      {
+        "File Date": "2026-07-08 00:00:00",
+        "Company": "Cloud Data Holdings (Withdrawn)",
+        "Company Type": "Holdings",
+        "Shares (millions)": 3.75,
+        "Avg_price": 4.25,
+        "Est Vol (millions)": 15.94,
+        "Shares_offered_value": 15.9375
+      },
+      {
+        "File Date": "2026-07-08 00:00:00",
+        "Company": "INFINT Acquisition Corp. 2 (Withdrawn)",
+        "Company Type": "Acquisition Corp",
+        "Shares (millions)": 10.0,
+        "Avg_price": 10.0,
+        "Est Vol (millions)": 100.0,
+        "Shares_offered_value": 100.0
+      },
+      {
+        "File Date": "2026-06-24 00:00:00",
+        "Company": "Kilcoy Global Foods Ltd. (Withdrawn)",
+        "Company Type": "Limited",
+        "Shares (millions)": 0.0,
+        "Avg_price": NaN,
+        "Est Vol (millions)": 100.0,
+        "Shares_offered_value": 100.0
+      },
+      {
+        "File Date": "2026-06-24 00:00:00",
+        "Company": "Safepoint Holdings (Withdrawn)",
+        "Company Type": "Holdings",
+        "Shares (millions)": 16.67,
+        "Avg_price": 16.0,
+        "Est Vol (millions)": 266.72,
+        "Shares_offered_value": 266.72
+      },
+      {
+        "File Date": "2026-06-11 00:00:00",
+        "Company": "Club Versante Group Ltd.",
+        "Company Type": "Group",
+        "Shares (millions)": 2.0,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 10.0,
+        "Shares_offered_value": 10.0
+      },
+      {
+        "File Date": "2026-06-01 00:00:00",
+        "Company": "Envoy Technologies (Withdrawn \u2013 Direct Listing)",
+        "Company Type": "Technologies",
+        "Shares (millions)": 7.8,
+        "Avg_price": 8.0,
+        "Est Vol (millions)": 62.4,
+        "Shares_offered_value": 62.4
+      },
+      {
+        "File Date": "2026-05-20 00:00:00",
+        "Company": "Vistek Limited (Withdrawn)",
+        "Company Type": "Limited",
+        "Shares (millions)": 6.25,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 31.0,
+        "Shares_offered_value": 31.25
+      },
+      {
+        "File Date": "2026-05-13 00:00:00",
+        "Company": "Ultratrex (Withdrawn)",
+        "Company Type": "Other",
+        "Shares (millions)": 1.25,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 6.25,
+        "Shares_offered_value": 6.25
+      },
+      {
+        "File Date": "2026-05-07 00:00:00",
+        "Company": "AiXin Life International",
+        "Company Type": "Other",
+        "Shares (millions)": 2.38,
+        "Avg_price": 4.0,
+        "Est Vol (millions)": 9.5,
+        "Shares_offered_value": 9.52
+      },
+      {
+        "File Date": "2026-05-06 00:00:00",
+        "Company": "Xinxu Copper Industry Technology Ltd.",
+        "Company Type": "Limited",
+        "Shares (millions)": 0.0,
+        "Avg_price": NaN,
+        "Est Vol (millions)": 15.0,
+        "Shares_offered_value": 15.0
+      },
+      {
+        "File Date": "2026-05-05 00:00:00",
+        "Company": "EUPEC International Group Ltd.",
+        "Company Type": "Group",
+        "Shares (millions)": 3.75,
+        "Avg_price": 4.0,
+        "Est Vol (millions)": 15.0,
+        "Shares_offered_value": 15.0
+      },
+      {
+        "File Date": "2026-05-01 00:00:00",
+        "Company": "CCIS Acquisition Corp.",
+        "Company Type": "Acquisition Corp",
+        "Shares (millions)": 6.0,
+        "Avg_price": 10.0,
+        "Est Vol (millions)": 60.0,
+        "Shares_offered_value": 60.0
+      },
+      {
+        "File Date": "2026-04-01 00:00:00",
+        "Company": "Going International Holding Company Limited",
+        "Company Type": "Limited",
+        "Shares (millions)": 0.0,
+        "Avg_price": NaN,
+        "Est Vol (millions)": 20.0,
+        "Shares_offered_value": 20.0
+      },
+      {
+        "File Date": "2026-03-16 00:00:00",
+        "Company": "Firefly Automatix",
+        "Company Type": "Other",
+        "Shares (millions)": 4.55,
+        "Avg_price": 5.5,
+        "Est Vol (millions)": 25.0,
+        "Shares_offered_value": 25.025
+      },
+      {
+        "File Date": "2026-03-06 00:00:00",
+        "Company": "Invea Therapeutics (Withdrawn)",
+        "Company Type": "Other",
+        "Shares (millions)": 0.0,
+        "Avg_price": NaN,
+        "Est Vol (millions)": 75.0,
+        "Shares_offered_value": 75.0
+      },
+      {
+        "File Date": "2026-02-27 00:00:00",
+        "Company": "Billion Group Holdings (Withdrawn)",
+        "Company Type": "Group",
+        "Shares (millions)": 1.5,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 7.5,
+        "Shares_offered_value": 7.5
+      },
+      {
+        "File Date": "2026-02-24 00:00:00",
+        "Company": "AIGO Holding Ltd.",
+        "Company Type": "Limited",
+        "Shares (millions)": 2.0,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 10.0,
+        "Shares_offered_value": 10.0
+      },
+      {
+        "File Date": "2026-02-19 00:00:00",
+        "Company": "Clear Street Group Inc. (Withdrawn)",
+        "Company Type": "Inc.",
+        "Shares (millions)": 13.0,
+        "Avg_price": 27.0,
+        "Est Vol (millions)": 351.0,
+        "Shares_offered_value": 351.0
+      },
+      {
+        "File Date": "2026-02-13 00:00:00",
+        "Company": "Lemeng Holdings (Withdrawn)",
+        "Company Type": "Holdings",
+        "Shares (millions)": 4.0,
+        "Avg_price": 5.0,
+        "Est Vol (millions)": 20.0,
+        "Shares_offered_value": 20.0
+      }
+    ]
+  },
+  "q2": {
+    "question": "What is the median Sharpe ratio (as of 11 September 2026) for companies that went public before 1 September 2025?",
+    "n_ipos_2025": 231,
+    "n_after_filter": 146,
+    "n_tickers_downloaded": 132,
+    "as_of": "2026-09-11",
+    "median_sharpe": 0.04800899950378707,
+    "median_sharpe_vol_on_returns_variant": 0.6672145191154351,
+    "mean_sharpe": Infinity,
+    "describe": {
+      "growth_252d": {
+        "count": 127.0,
+        "mean": 1.2546785087499757,
+        "std": 3.716001331812173,
+        "min": 0.0010049019520189247,
+        "25%": 0.21416532258246507,
+        "50%": 0.6353088262446783,
+        "75%": 1.0725049352271987,
+        "max": 33.638269725741374
+      },
+      "volatility": {
+        "count": 130.0,
+        "mean": 34.762680901785835,
+        "std": 77.01643393145314,
+        "min": 0.0,
+        "25%": 2.873328484974639,
+        "50%": 11.98747641041843,
+        "75%": 31.282146317936014,
+        "max": 627.6981062245012
+      },
+      "Sharpe": {
+        "count": 127.0,
+        "mean": Infinity,
+        "std": NaN,
+        "min": -0.040147359138709204,
+        "25%": 0.006798175138419247,
+        "50%": 0.04800899950378707,
+        "75%": 0.13787002671426557,
+        "max": Infinity
+      }
+    },
+    "n_reached_252d": 127,
+    "n_rows_on_as_of_date": 132,
+    "median_growth_252d": 0.6353088262446783,
+    "mean_growth_252d": 1.2546785087499757
+  },
+  "q3": {
+    "question": "What is the optimal number of months (1 to 12) to hold a newly IPO'd stock in order to maximize the median growth value?",
+    "median_by_month": {
+      "month_1": -0.07154132530126522,
+      "month_2": -0.11010914705395647,
+      "month_3": -0.17283953282125997,
+      "month_4": -0.2750617133246528,
+      "month_5": -0.30909091776067565,
+      "month_6": -0.27400001525878903,
+      "month_7": -0.3380000305175781,
+      "month_8": -0.3955408439978564,
+      "month_9": -0.43636362235189197,
+      "month_10": -0.4663597798525222,
+      "month_11": -0.5075471626137787,
+      "month_12": -0.44867925823859445
+    },
+    "mean_by_month": {
+      "month_1": 95.45745930757866,
+      "month_2": 66.94118107485866,
+      "month_3": 50.231277814670285,
+      "month_4": 22.37015937779643,
+      "month_5": 54.915858978919374,
+      "month_6": 65.01174113085052,
+      "month_7": 60.10886459514846,
+      "month_8": 21.11916101779239,
+      "month_9": 19.975672275193077,
+      "month_10": 10.92715054388888,
+      "month_11": 8.480373189976978,
+      "month_12": 5.270295980287912
+    },
+    "n_by_month": {
+      "month_1": 131,
+      "month_2": 131,
+      "month_3": 131,
+      "month_4": 127,
+      "month_5": 127,
+      "month_6": 127,
+      "month_7": 127,
+      "month_8": 127,
+      "month_9": 127,
+      "month_10": 127,
+      "month_11": 127,
+      "month_12": 127
+    },
+    "optimal_month": 1,
+    "max_median_growth": -0.07154132530126522,
+    "n_stocks_used": 132
+  },
+  "q4": {
+    "question": "What is the total profit (in $ thousands) you would have earned by investing $1000 every time a stock was oversold (RSI < 30)?",
+    "n_trades": 5206,
+    "net_income_usd": 65805.58960747933,
+    "net_income_usd_thousands": 65.80558960747933,
+    "avg_30d_return_pct": 101.26403360751976,
+    "win_rate_pct": 55.12869765655013,
+    "window": "2000-01-01 .. 2025-06-01"
+  }
+}
