@@ -1,0 +1,422 @@
+{
+  "q1": {
+    "question": "Which year had the highest number of additions (starting from 2020)?",
+    "counts_by_year": {
+      "2020": 10,
+      "2021": 10,
+      "2022": 14,
+      "2023": 13,
+      "2024": 16,
+      "2025": 17,
+      "2026": 19
+    },
+    "max_year_including_current_partial": 2026,
+    "max_year_full_years_only": 2025,
+    "max_count_full_years_only": 17,
+    "tied_full_years": [
+      2025
+    ],
+    "additional_stocks_in_index_over_20_years": 223,
+    "total_constituents": 503,
+    "snapshot_date": "2026-11-04"
+  },
+  "q2": {
+    "question": "How many indexes (out of 10) have better year-to-date returns than the US (S&P 500) as of August 21, 2026?",
+    "sp500_ytd_pct": 11.412019253393835,
+    "all_indexes": {
+      "United States - S&P 500": 11.412019253393835,
+      "China - Shanghai Composite": -2.974984823951776,
+      "Hong Kong - Hang Seng": -2.4298315417153993,
+      "Australia - S&P/ASX 200": 4.0789203231815785,
+      "India - Nifty 50": -7.322958916814581,
+      "Canada - S&P/TSX Composite": 14.0574656152199,
+      "Germany - DAX": 5.883203166599049,
+      "United Kingdom - FTSE 100": 8.010175932582818,
+      "Japan - Nikkei 225": 27.750744826533214,
+      "Mexico - IPC Mexico": 0.32497191871372344,
+      "Brazil - Ibovespa": 4.601997022530346
+    },
+    "windows": {
+      "United States - S&P 500": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "China - Shanghai Composite": [
+        "2026-01-05",
+        "2026-08-20"
+      ],
+      "Hong Kong - Hang Seng": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "Australia - S&P/ASX 200": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "India - Nifty 50": [
+        "2026-01-01",
+        "2026-08-20"
+      ],
+      "Canada - S&P/TSX Composite": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "Germany - DAX": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "United Kingdom - FTSE 100": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "Japan - Nikkei 225": [
+        "2026-01-05",
+        "2026-08-20"
+      ],
+      "Mexico - IPC Mexico": [
+        "2026-01-02",
+        "2026-08-20"
+      ],
+      "Brazil - Ibovespa": [
+        "2026-01-02",
+        "2026-08-20"
+      ]
+    },
+    "n_better_than_sp500": 2,
+    "better_than_sp500": {
+      "Canada - S&P/TSX Composite": 14.0574656152199,
+      "Japan - Nikkei 225": 27.750744826533214
+    },
+    "sensitivity": {
+      "as_written_exclusive_end (2026-01-01..2026-08-20)": {
+        "sp500_ytd_pct": 11.412019253393835,
+        "n_better": 2,
+        "better": {
+          "Canada - S&P/TSX Composite": 14.0574656152199,
+          "Japan - Nikkei 225": 27.750744826533214
+        }
+      },
+      "inclusive_aug21 (2026-01-01..2026-08-21)": {
+        "sp500_ytd_pct": 11.896237452163927,
+        "n_better": 2,
+        "better": {
+          "Canada - S&P/TSX Composite": 14.856630002105442,
+          "Japan - Nikkei 225": 27.36405978447678
+        }
+      },
+      "base_2025-12-31": {
+        "sp500_ytd_pct": 11.623112354831644,
+        "n_better": 2,
+        "better": {
+          "Canada - S&P/TSX Composite": 14.671039900710436,
+          "Japan - Nikkei 225": 27.750744826533214
+        }
+      }
+    }
+  },
+  "q3": {
+    "question": "Median drawdown (in %) of significant market corrections in the S&P 500 index",
+    "data_start": "1950-01-03",
+    "data_end": "2026-11-06",
+    "n_ath_points": 1510,
+    "n_corrections_total": 1509,
+    "n_corrections_ge_5pct": 74,
+    "median_drawdown_pct": 7.986357561745869,
+    "p25_drawdown_pct": 6.234676728552506,
+    "p75_drawdown_pct": 14.019825845403808,
+    "median_duration_days": 40.5,
+    "top10_by_drawdown": [
+      {
+        "ath_date": "2007-10-09",
+        "trough_date": "2009-03-09",
+        "drawdown_pct": 56.77538774277282,
+        "duration_days": 517
+      },
+      {
+        "ath_date": "2000-03-24",
+        "trough_date": "2002-10-09",
+        "drawdown_pct": 49.14694789846553,
+        "duration_days": 929
+      },
+      {
+        "ath_date": "1973-01-11",
+        "trough_date": "1974-10-03",
+        "drawdown_pct": 48.20359290935836,
+        "duration_days": 630
+      },
+      {
+        "ath_date": "1968-11-29",
+        "trough_date": "1970-05-26",
+        "drawdown_pct": 36.061641451132346,
+        "duration_days": 543
+      },
+      {
+        "ath_date": "2020-02-19",
+        "trough_date": "2020-03-23",
+        "drawdown_pct": 33.92496000265327,
+        "duration_days": 33
+      },
+      {
+        "ath_date": "1987-08-25",
+        "trough_date": "1987-12-04",
+        "drawdown_pct": 33.5095152555726,
+        "duration_days": 101
+      },
+      {
+        "ath_date": "1961-12-12",
+        "trough_date": "1962-06-26",
+        "drawdown_pct": 27.973568096863062,
+        "duration_days": 196
+      },
+      {
+        "ath_date": "1980-11-28",
+        "trough_date": "1982-08-12",
+        "drawdown_pct": 27.11358165748537,
+        "duration_days": 622
+      },
+      {
+        "ath_date": "2022-01-03",
+        "trough_date": "2022-10-12",
+        "drawdown_pct": 25.4250966192304,
+        "duration_days": 282
+      },
+      {
+        "ath_date": "1966-02-09",
+        "trough_date": "1966-10-07",
+        "drawdown_pct": 22.17733484136764,
+        "duration_days": 240
+      }
+    ]
+  },
+  "q4": {
+    "question": "Calculate the median 2-day percentage change in stock prices following positive earnings surprise days.",
+    "earnings_window": "2020-10-29 .. 2026-07-30 (the 25-entry list described by the assignment)",
+    "n_earnings_rows_raw": 50,
+    "n_rows_used_assignment_era": 24,
+    "n_positive_surprises": 20,
+    "median_2d_return_positive_pct": 0.35280649406906894,
+    "mean_2d_return_positive_pct": 0.4635174112647956,
+    "median_2d_return_all_pct": -0.16669292565285043,
+    "median_2d_return_positive_current_window_pct": -4.00376387112138,
+    "corr_return_vs_surprise_all": 0.21909505379576458,
+    "corr_return_vs_surprise_positive": 0.330669247407159,
+    "detail": [
+      {
+        "earnings_date": "2026-07-30",
+        "trading_day": "2026-07-30",
+        "reported_eps": 5.75,
+        "surprise_pct": 215.14,
+        "close_day1": 226.64999389648438,
+        "close_day3": 271.5799865722656,
+        "return_2d_pct": 19.82351373735385
+      },
+      {
+        "earnings_date": "2026-04-29",
+        "trading_day": "2026-04-29",
+        "reported_eps": 2.78,
+        "surprise_pct": 68.18,
+        "close_day1": 259.70001220703125,
+        "close_day3": 265.05999755859375,
+        "return_2d_pct": 2.0639141700500074
+      },
+      {
+        "earnings_date": "2026-02-05",
+        "trading_day": "2026-02-05",
+        "reported_eps": 1.95,
+        "surprise_pct": 0.22,
+        "close_day1": 232.99000549316406,
+        "close_day3": 210.32000732421875,
+        "return_2d_pct": -9.7300303165195
+      },
+      {
+        "earnings_date": "2025-10-30",
+        "trading_day": "2025-10-30",
+        "reported_eps": 1.95,
+        "surprise_pct": 25.2,
+        "close_day1": 230.3000030517578,
+        "close_day3": 244.22000122070312,
+        "return_2d_pct": 6.044289181280171
+      },
+      {
+        "earnings_date": "2025-07-31",
+        "trading_day": "2025-07-31",
+        "reported_eps": 1.68,
+        "surprise_pct": 27.19,
+        "close_day1": 230.19000244140625,
+        "close_day3": 214.75,
+        "return_2d_pct": -6.707503487401212
+      },
+      {
+        "earnings_date": "2025-05-01",
+        "trading_day": "2025-05-01",
+        "reported_eps": 1.59,
+        "surprise_pct": 16.77,
+        "close_day1": 184.4199981689453,
+        "close_day3": 189.97999572753906,
+        "return_2d_pct": 3.014856096842755
+      },
+      {
+        "earnings_date": "2025-02-06",
+        "trading_day": "2025-02-06",
+        "reported_eps": 1.86,
+        "surprise_pct": 25.29,
+        "close_day1": 236.1699981689453,
+        "close_day3": 229.14999389648438,
+        "return_2d_pct": -2.972436942409229
+      },
+      {
+        "earnings_date": "2024-10-31",
+        "trading_day": "2024-10-31",
+        "reported_eps": 1.43,
+        "surprise_pct": 25.22,
+        "close_day1": 192.72999572753906,
+        "close_day3": 197.92999267578125,
+        "return_2d_pct": 2.698073503614551
+      },
+      {
+        "earnings_date": "2024-08-01",
+        "trading_day": "2024-08-01",
+        "reported_eps": 1.26,
+        "surprise_pct": 23.76,
+        "close_day1": 186.97999572753906,
+        "close_day3": 167.89999389648438,
+        "return_2d_pct": -10.204301137570582
+      },
+      {
+        "earnings_date": "2024-04-30",
+        "trading_day": "2024-04-30",
+        "reported_eps": 0.98,
+        "surprise_pct": 17.67,
+        "close_day1": 180.9600067138672,
+        "close_day3": 179.0,
+        "return_2d_pct": -1.083115959962544
+      },
+      {
+        "earnings_date": "2024-02-01",
+        "trading_day": "2024-02-01",
+        "reported_eps": 1.0,
+        "surprise_pct": 24.38,
+        "close_day1": 155.1999969482422,
+        "close_day3": 171.80999755859375,
+        "return_2d_pct": 10.702320191340498
+      },
+      {
+        "earnings_date": "2023-10-26",
+        "trading_day": "2023-10-26",
+        "reported_eps": 0.94,
+        "surprise_pct": 62.22,
+        "close_day1": 121.38999938964844,
+        "close_day3": 127.73999786376953,
+        "return_2d_pct": 5.231072169082318
+      },
+      {
+        "earnings_date": "2023-08-03",
+        "trading_day": "2023-08-03",
+        "reported_eps": 0.65,
+        "surprise_pct": 91.19,
+        "close_day1": 128.2100067138672,
+        "close_day3": 139.57000732421875,
+        "return_2d_pct": 8.860463314462063
+      },
+      {
+        "earnings_date": "2023-04-27",
+        "trading_day": "2023-04-27",
+        "reported_eps": 0.31,
+        "surprise_pct": 44.29,
+        "close_day1": 104.9800033569336,
+        "close_day3": 105.44999694824219,
+        "return_2d_pct": 0.44769820563885787
+      },
+      {
+        "earnings_date": "2023-02-02",
+        "trading_day": "2023-02-02",
+        "reported_eps": 0.03,
+        "surprise_pct": -82.2,
+        "close_day1": 105.1500015258789,
+        "close_day3": 103.38999938964844,
+        "return_2d_pct": -1.6738013415979913
+      },
+      {
+        "earnings_date": "2022-10-27",
+        "trading_day": "2022-10-27",
+        "reported_eps": 0.28,
+        "surprise_pct": 35.53,
+        "close_day1": 115.66000366210938,
+        "close_day3": 103.41000366210938,
+        "return_2d_pct": -10.591388217302244
+      },
+      {
+        "earnings_date": "2022-07-28",
+        "trading_day": "2022-07-28",
+        "reported_eps": -0.2,
+        "surprise_pct": -273.3,
+        "close_day1": 120.97000122070312,
+        "close_day3": 134.9499969482422,
+        "return_2d_pct": 11.556580628641422
+      },
+      {
+        "earnings_date": "2022-04-28",
+        "trading_day": "2022-04-28",
+        "reported_eps": -0.38,
+        "surprise_pct": -190.58,
+        "close_day1": 138.16700744628906,
+        "close_day3": 124.28150177001953,
+        "return_2d_pct": -10.04979838017218
+      },
+      {
+        "earnings_date": "2022-02-03",
+        "trading_day": "2022-02-03",
+        "reported_eps": 1.39,
+        "surprise_pct": 657.12,
+        "close_day1": 150.6125030517578,
+        "close_day3": 157.63949584960938,
+        "return_2d_pct": 4.665610527325703
+      },
+      {
+        "earnings_date": "2021-10-28",
+        "trading_day": "2021-10-28",
+        "reported_eps": 0.31,
+        "surprise_pct": -31.21,
+        "close_day1": 169.62449645996094,
+        "close_day3": 168.6215057373047,
+        "return_2d_pct": -0.5913006338049809
+      },
+      {
+        "earnings_date": "2021-07-29",
+        "trading_day": "2021-07-29",
+        "reported_eps": 0.76,
+        "surprise_pct": 23.06,
+        "close_day1": 181.51600646972656,
+        "close_day3": 166.37950134277344,
+        "return_2d_pct": -8.338936836117316
+      },
+      {
+        "earnings_date": "2021-04-29",
+        "trading_day": "2021-04-29",
+        "reported_eps": 0.79,
+        "surprise_pct": 67.3,
+        "close_day1": 172.9250030517578,
+        "close_day3": 173.37100219726562,
+        "return_2d_pct": 0.25791478249928
+      },
+      {
+        "earnings_date": "2021-02-02",
+        "trading_day": "2021-02-02",
+        "reported_eps": 0.7,
+        "surprise_pct": 100.1,
+        "close_day1": 167.1439971923828,
+        "close_day3": 165.62649536132812,
+        "return_2d_pct": -0.9079008857901361
+      },
+      {
+        "earnings_date": "2020-10-29",
+        "trading_day": "2020-10-29",
+        "reported_eps": 0.62,
+        "surprise_pct": 64.25,
+        "close_day1": 158.13900756835938,
+        "close_day3": 151.8074951171875,
+        "return_2d_pct": -4.00376387112138
+      }
+    ]
+  }
+}
