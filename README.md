@@ -51,8 +51,26 @@ against an independent anchor wherever the assignment provides one.
 
 ### Homework 5 — Automation & New Ideas
 
-Three research ideas, each with market, thesis, edge, data, approach and validation:
-see [`homework5/README.md`](homework5/README.md).
+Three exploratory research ideas, each stated as market and scope, investment thesis,
+potential edge, data and sources, research approach, and validation and risks. Every one
+carries an explicit falsification criterion, so each can be rejected by a stated test
+rather than argued about.
+
+| # | Idea | Mechanism | Market | Horizon |
+|---|------|-----------|--------|---------|
+| 1 | Foreign-flow exhaustion and domestic absorption | Order-flow imbalance vs. retail absorption | Kenya (Nairobi Stock Exchange) | 5–20 trading days |
+| 2 | MSCI index-review passive flows | Benchmarked passive demand | Global frontier markets | Announcement → effective date |
+| 3 | Is the October/November seasonality real? | Calendar artefact vs. true seasonality | US / EU / India large caps | 30-day forward |
+
+The three ideas deliberately differ in economic mechanism, market, data source and holding
+period, so no two of them depend on the same bet. Idea 1 is a flow-reversal hypothesis
+built on Kenya's shift to a domestic marginal buyer, idea 2 is a scheduled demand shock
+with a published calendar, and idea 3 is a falsification test of the course's own
+strongest calendar feature, whose outcome feeds straight back into how the capstone model
+should be built.
+
+Full write-ups with sources: [`homework5/README.md`](homework5/README.md).
+Paste-ready version of the three form answers: [`homework5/submission_text.md`](homework5/submission_text.md).
 
 ---
 
@@ -63,7 +81,7 @@ homework1/          Intro and data sources   -> src/hw1_questions.py,  output/hw
 homework2/          One dataframe             -> src/hw2_questions.py,  output/hw2_answers.json
 homework3/          The model                 -> src/hw3_questions.py,  output/hw3_answers.json
 homework4/          Trading system            -> src/hw4_questions.py,  src/merge_results.py
-homework5/          Three research ideas      -> README.md
+homework5/          Three research ideas      -> README.md,  submission_text.md
 scripts/            download_data.py - fetches the two Google Drive parquet files
 ```
 
@@ -130,6 +148,9 @@ Two further details worth knowing if you re-run this:
 | [Wikipedia S&P 500 constituents](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) | Index addition dates | Free (needs a browser-like TLS fingerprint) |
 | [iposcoop.com](https://www.iposcoop.com/) | IPO filings and pricings | Free |
 | [Course Google Drive parquet](https://drive.google.com/file/d/1oQSUMCs2DyQQIh8Y62UhrT00cIsE9Sr5/view) | Shared dataset for HW3/HW4 | Course link |
+| [CMA Kenya bulletins](https://www.cma.or.ke/) | Foreign participation and net flows (HW5 idea 1) | Free PDF |
+| [MSCI index reviews](https://app2.msci.com/eqb/fm/index_review.html) | Frontier index additions and deletions (HW5 idea 2) | Free PDF |
+| [FRED / ALFRED](https://fred.stlouisfed.org/) | Macro release calendar (HW5 idea 3) | Free, no key |
 
 ---
 
