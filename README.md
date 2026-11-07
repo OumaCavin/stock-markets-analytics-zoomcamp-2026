@@ -51,26 +51,19 @@ against an independent anchor wherever the assignment provides one.
 
 ### Homework 5 — Automation & New Ideas
 
-Three exploratory research ideas, each stated as market and scope, investment thesis,
-potential edge, data and sources, research approach, and validation and risks. Every one
-carries an explicit falsification criterion, so each can be rejected by a stated test
-rather than argued about.
+| # | Question | Answer |
+|---|----------|--------|
+| 1 | Research Idea Number One | Foreign-flow exhaustion and domestic absorption on the Nairobi Stock Exchange |
+| 2 | Research Idea Number Two | MSCI index-review passive flows in frontier markets |
+| 3 | Research Idea Number Three | Is the October/November 30-day growth effect real, or a calendar artefact? |
 
-| # | Idea | Mechanism | Market | Horizon |
-|---|------|-----------|--------|---------|
-| 1 | Foreign-flow exhaustion and domestic absorption | Order-flow imbalance vs. retail absorption | Kenya (Nairobi Stock Exchange) | 5–20 trading days |
-| 2 | MSCI index-review passive flows | Benchmarked passive demand | Global frontier markets | Announcement → effective date |
-| 3 | Is the October/November seasonality real? | Calendar artefact vs. true seasonality | US / EU / India large caps | 30-day forward |
-
-The three ideas deliberately differ in economic mechanism, market, data source and holding
-period, so no two of them depend on the same bet. Idea 1 is a flow-reversal hypothesis
-built on Kenya's shift to a domestic marginal buyer, idea 2 is a scheduled demand shock
-with a published calendar, and idea 3 is a falsification test of the course's own
-strongest calendar feature, whose outcome feeds straight back into how the capstone model
-should be built.
-
-Full write-ups with sources: [`homework5/README.md`](homework5/README.md).
-Paste-ready version of the three form answers: [`homework5/submission_text.md`](homework5/submission_text.md).
+Each idea states the market and scope, the investment thesis, the potential edge, the data
+and its sources, the research approach, and the validation and risks, with a
+falsification criterion that can reject it. The three differ in economic mechanism, market
+and holding period: idea 1 is a flow-reversal hypothesis built on Kenya's shift to a
+domestic marginal buyer, idea 2 is a scheduled demand shock with a published calendar,
+and idea 3 is a falsification test of the course's own strongest calendar feature, whose
+outcome feeds back into how the capstone model should be built.
 
 ---
 
@@ -81,7 +74,7 @@ homework1/          Intro and data sources   -> src/hw1_questions.py,  output/hw
 homework2/          One dataframe             -> src/hw2_questions.py,  output/hw2_answers.json
 homework3/          The model                 -> src/hw3_questions.py,  output/hw3_answers.json
 homework4/          Trading system            -> src/hw4_questions.py,  src/merge_results.py
-homework5/          Three research ideas      -> README.md,  submission_text.md
+homework5/          Three research ideas      -> README.md
 scripts/            download_data.py - fetches the two Google Drive parquet files
 ```
 
