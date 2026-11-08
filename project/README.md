@@ -370,7 +370,9 @@ on 1 January 2026 and the thresholds were fixed on the validation slice before i
 
 
 The precision column is constant because it is measured at the 0.5 cut-off, which is
-the wrong cut-off for every one of these models on a 39% base rate. The AUC column is
+the wrong cut-off for every one of these models: every row of the panel is predicted
+negative, so the precision is just the share of rows in each slice that happened to be
+positive, 41.9% on the validation slice and 39.4% on the test slice. The AUC column is
 the one that separates them: the random forest is the only model that keeps an edge
 out of sample (0.584), and the linear and neural models lose theirs (0.526 and 0.514).
 
