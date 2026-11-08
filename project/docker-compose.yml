@@ -1,0 +1,29 @@
+# Run the project in a container with the data and the outputs on mounted volumes.
+#
+#   docker compose run --rm strategy            # rebuild everything from the cache
+#   docker compose run --rm strategy --regime download   # refresh from the exchange
+#   docker compose --profile cron up daily-job  # run the scheduled job once
+
+services:
+  strategy:
+    build: .
+    image: crypto-perps-strategy
+    command: ["--regime", "cache"]
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    environment:
+      - DOWNLOAD_WORKERS=12
+
+  daily-job:
+    build: .
+    image: crypto-perps-strategy
+    entrypoint: ["/app/run_pipeline.sh"]
+    profiles: ["cron"]
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    environment:
+      - DOWNLOAD_WORKERS=12
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
