@@ -119,9 +119,15 @@ def plot_equity_curves(equity_curves: dict, path: Path) -> None:
     for name, curve in equity_curves.items():
         if curve is None or len(curve) == 0:
             continue
-        series = pd.Series(np.asarray(curve, dtype="float64"))
+        values = np.asarray(curve, dtype="float64")
+        index = None
+        if isinstance(curve, pd.Series) and isinstance(curve.index, pd.DatetimeIndex):
+            index = curve.index
+        series = pd.Series(values, index=index)
         series = series / series.iloc[0]
-        ax.plot(series.index if isinstance(series.index, pd.DatetimeIndex) else range(len(series)),
+        # The curves are drawn against the calendar, not against the number of trades,
+        # otherwise two strategies with different trade counts are not comparable.
+        ax.plot(series.index if index is not None else range(len(series)),
                 series.to_numpy(), label=name, linewidth=1.1)
     ax.set_title("Equity curves of the simulated strategies")
     ax.set_ylabel("growth of capital")
@@ -461,7 +467,11 @@ def run(
                 res["equity_curve"], index=pd.DatetimeIndex(res["equity_curve_index"])
             )
         if bench_btc:
-            curves["buy_and_hold_BTC"] = pd.Series(bench_btc["equity_curve"])
+            btc_rows = panel[panel["ticker"] == "BTCUSDT"].sort_values("timestamp")
+            curves["buy_and_hold_BTC"] = pd.Series(
+                bench_btc["equity_curve"],
+                index=pd.DatetimeIndex(btc_rows["timestamp"].to_numpy()[: len(bench_btc["equity_curve"])]),
+            )
         plot_equity_curves(curves, C.OUTPUT_DIR / "equity_curves.png")
 
         # ---- diagnostics ---------------------------------------------------------------
