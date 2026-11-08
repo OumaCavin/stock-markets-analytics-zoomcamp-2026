@@ -1,0 +1,14 @@
+# Cron entry for the daily job.
+#
+# Install it with:
+#   crontab -e
+# and paste the line below, adjusting the path and the working directory.
+#
+# The job refreshes the panel with the latest bars, retrains the models, reruns the
+# simulation, writes the daily orders to the ledger and posts the summary to Telegram.
+
+# Run at 07:17 UTC every day, when the exchange has published the previous day's bars.
+17 7 * * * cd /path/to/repo/project && ./run_pipeline.sh >> /path/to/repo/project/output/cron.log 2>&1
+
+# A second run in the evening catches any bar that was published late.
+43 19 * * * cd /path/to/repo/project && ./run_pipeline.sh >> /path/to/repo/project/output/cron.log 2>&1
