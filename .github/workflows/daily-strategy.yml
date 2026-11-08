@@ -1,0 +1,86 @@
+# Daily run of the trading pipeline on a schedule.
+#
+# This is the cloud deployment of the system: the same commands that run locally run
+# here, on a fresh runner every day, and the results are pushed back to the repository
+# so the dashboard and the tables are always current.
+#
+# The job needs no secrets to run in the paper mode. Add the repository secrets
+# BINANCE_API_KEY, BINANCE_API_SECRET, TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID to turn
+# on real orders and the Telegram notifications.
+
+name: daily strategy run
+
+on:
+  schedule:
+    # 07:17 UTC every day.
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+    inputs:
+      regime:
+        description: "Pipeline regime"
+        required: false
+        default: "incremental"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: project/requirements.txt
+
+      - name: Install the dependencies
+        working-directory: project
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Cache the raw archives
+        uses: actions/cache@v4
+        with:
+          path: project/data/raw
+          key: raw-archives-${{ github.run_id }}
+          restore-keys: raw-archives-
+
+      - name: Run the pipeline
+        working-directory: project
+        env:
+          BINANCE_API_KEY: ${{ secrets.BINANCE_API_KEY }}
+          BINANCE_API_SECRET: ${{ secrets.BINANCE_API_SECRET }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python -m src.pipeline --regime ${{ github.event.inputs.regime || 'incremental' }}
+
+      - name: Place the daily orders
+        working-directory: project
+        env:
+          BINANCE_API_KEY: ${{ secrets.BINANCE_API_KEY }}
+          BINANCE_API_SECRET: ${{ secrets.BINANCE_API_SECRET }}
+        run: python -m src.broker --signal pred_ensemble --max-orders 10
+
+      - name: Rebuild the dashboard and notify
+        working-directory: project
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python -m src.monitor --dashboard
+          python -m src.monitor --telegram || true
+
+      - name: Publish the results
+        working-directory: project
+        run: |
+          git config user.name "OumaCavin"
+          git config user.email "cavin.otieno012@gmail.com"
+          git add output || true
+          git diff --staged --quiet || git commit -m "chore(automation): publish the daily strategy run"
+          git push || true
