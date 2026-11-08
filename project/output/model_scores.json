@@ -1,0 +1,195 @@
+{
+  "random_forest": {
+    "params": {
+      "max_depth": 6,
+      "min_samples_leaf": 50,
+      "n_estimators": 150
+    },
+    "scores": {
+      "train": {
+        "precision": 0.45856098921112604,
+        "recall": 1.0,
+        "accuracy": 0.45856098921112604,
+        "auc": 0.7857341171533905
+      },
+      "valid": {
+        "precision": 0.4186747474747475,
+        "recall": 1.0,
+        "accuracy": 0.4186747474747475,
+        "auc": 0.5530918951399544
+      },
+      "test": {
+        "precision": 0.39381530744312904,
+        "recall": 1.0,
+        "accuracy": 0.39381530744312904,
+        "auc": 0.583976240005225
+      }
+    },
+    "fit_seconds": 199.8
+  },
+  "xgboost": {
+    "params": {
+      "max_depth": 4,
+      "learning_rate": 0.03,
+      "n_estimators": 300
+    },
+    "scores": {
+      "train": {
+        "precision": 0.45856098921112604,
+        "recall": 1.0,
+        "accuracy": 0.45856098921112604,
+        "auc": 0.8422822267186608
+      },
+      "valid": {
+        "precision": 0.4186747474747475,
+        "recall": 1.0,
+        "accuracy": 0.4186747474747475,
+        "auc": 0.5387806174302192
+      },
+      "test": {
+        "precision": 0.39381530744312904,
+        "recall": 1.0,
+        "accuracy": 0.39381530744312904,
+        "auc": 0.5437870305838051
+      }
+    },
+    "fit_seconds": 129.4
+  },
+  "lightgbm": {
+    "params": {
+      "num_leaves": 31,
+      "learning_rate": 0.03,
+      "n_estimators": 300
+    },
+    "scores": {
+      "train": {
+        "precision": 0.45856098921112604,
+        "recall": 1.0,
+        "accuracy": 0.45856098921112604,
+        "auc": 0.8886236243725449
+      },
+      "valid": {
+        "precision": 0.4186747474747475,
+        "recall": 1.0,
+        "accuracy": 0.4186747474747475,
+        "auc": 0.5477485305085805
+      },
+      "test": {
+        "precision": 0.39381530744312904,
+        "recall": 1.0,
+        "accuracy": 0.39381530744312904,
+        "auc": 0.5534588700390144
+      }
+    },
+    "fit_seconds": 138.6
+  },
+  "logistic_regression": {
+    "params": {
+      "clf__C": 0.01
+    },
+    "scores": {
+      "train": {
+        "precision": 0.45856098921112604,
+        "recall": 1.0,
+        "accuracy": 0.45856098921112604,
+        "auc": 0.7956207529348589
+      },
+      "valid": {
+        "precision": 0.4186747474747475,
+        "recall": 1.0,
+        "accuracy": 0.4186747474747475,
+        "auc": 0.5698803376845442
+      },
+      "test": {
+        "precision": 0.39381530744312904,
+        "recall": 1.0,
+        "accuracy": 0.39381530744312904,
+        "auc": 0.5262127974299005
+      }
+    },
+    "fit_seconds": 49.8
+  },
+  "mlp": {
+    "params": {
+      "clf__hidden_layer_sizes": [
+        64,
+        32
+      ],
+      "clf__alpha": 0.001
+    },
+    "scores": {
+      "train": {
+        "precision": 0.45856098921112604,
+        "recall": 1.0,
+        "accuracy": 0.45856098921112604,
+        "auc": 0.9501513215981136
+      },
+      "valid": {
+        "precision": 0.4186747474747475,
+        "recall": 1.0,
+        "accuracy": 0.4186747474747475,
+        "auc": 0.5110261596791724
+      },
+      "test": {
+        "precision": 0.39380344927186506,
+        "recall": 0.9999442969344746,
+        "accuracy": 0.39379702684323287,
+        "auc": 0.5134676508030593
+      }
+    },
+    "fit_seconds": 80.3
+  },
+  "ridge_regression": {
+    "params": {
+      "clf__alpha": 100.0
+    },
+    "scores": {
+      "train": {
+        "precision": 0.6599644230954476,
+        "recall": 0.7224127992801811,
+        "accuracy": 0.702027869914611,
+        "auc": 0.7731851734536546
+      },
+      "valid": {
+        "precision": 0.4166769415038839,
+        "recall": 0.2282912894945089,
+        "accuracy": 0.5430989898989899,
+        "auc": 0.5298721080267509
+      },
+      "test": {
+        "precision": 0.40632603406326034,
+        "recall": 0.11162894331284698,
+        "accuracy": 0.5859151633920019,
+        "auc": 0.4901855587932418
+      }
+    },
+    "fit_seconds": 34.8
+  },
+  "decision_tree": {
+    "params": {
+      "max_depth": 6,
+      "min_samples_leaf": 50
+    },
+    "scores": {
+      "train": {
+        "precision": 0.45856098921112604,
+        "recall": 1.0,
+        "accuracy": 0.45856098921112604,
+        "auc": 0.7140135786552901
+      },
+      "valid": {
+        "precision": 0.4186747474747475,
+        "recall": 1.0,
+        "accuracy": 0.4186747474747475,
+        "auc": 0.5061256088660866
+      },
+      "test": {
+        "precision": 0.39381530744312904,
+        "recall": 1.0,
+        "accuracy": 0.39381530744312904,
+        "auc": 0.49737549001395437
+      }
+    },
+    "fit_seconds": 56.8
+  }
+}

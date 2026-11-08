@@ -1,0 +1,119 @@
+{
+  "regime": "cache",
+  "stages": [
+    "strategies"
+  ],
+  "started": "2026-11-08T17:33:33.515090+00:00",
+  "universe": {
+    "considered": 369,
+    "selected": 150,
+    "dropped_illiquid": 104,
+    "dropped_short_history": 0
+  },
+  "model_families": [
+    "decision_tree",
+    "lightgbm",
+    "logistic_regression",
+    "mlp",
+    "random_forest",
+    "ridge_regression",
+    "xgboost"
+  ],
+  "panel": {
+    "rows": 831241,
+    "n_numeric": 65,
+    "n_dummies_families": 6,
+    "tickers": 150,
+    "from": "2023-11-01 00:00:00+00:00",
+    "to": "2026-10-31 23:00:00+00:00"
+  },
+  "dataset": {
+    "sizes": {
+      "train": 310227,
+      "valid": 247500,
+      "test": 273514
+    }
+  },
+  "thresholds": {
+    "decision_tree": 0.542845606803894,
+    "lightgbm": 0.8441194087266922,
+    "logistic_regression": 0.7586657404899599,
+    "mlp": 0.030582786351442334,
+    "random_forest": 0.6062788546085357,
+    "ridge_regression": 0.07962939083576208,
+    "xgboost": 0.7842963337898254,
+    "ensemble": 0.7977528846263885
+  },
+  "diagnostics": {
+    "precision_table": "pred_mlp",
+    "model": "pred_mlp"
+  },
+  "strategies": {
+    "n_strategies": 31,
+    "best_vectorised": {
+      "prediction": "pred_logistic_regression",
+      "count_investments": 74077,
+      "avg_investments_per_day": 107.82678311499272,
+      "q75_investments_per_day": 51.0,
+      "gross_rev": 648731.0676163319,
+      "fees": -7407.700000000001,
+      "net_rev": 641323.3676163319,
+      "avg_net_rev_per_investment": 8.6575234906426,
+      "win_rate": 0.6934271096291696,
+      "capital": 35700.0,
+      "CAGR": 1.6667265259303274
+    },
+    "best_exact": {
+      "prediction": "pred_logistic_regression",
+      "trades": 3666,
+      "win_rate": 0.6563011456628478,
+      "gross_pnl": 27109.755261435872,
+      "fees": 760.3097552614867,
+      "net_pnl": 26349.44550617653,
+      "ending_capital": 62749.44550617653,
+      "return_on_capital": 0.7238858655543003,
+      "required_capital": 36400.0,
+      "peak_cash_need": 6.799999999999992,
+      "final_equity": 62749.44550617653,
+      "CAGR": 0.1990468972598851,
+      "Sharpe": 4.1841026919500575,
+      "max_drawdown": -0.032432876815536305,
+      "avg_equity": 54329.87961453873
+    },
+    "best_equity": {
+      "prediction": "pred_ridge_regression",
+      "trades": 4322,
+      "win_rate": 0.6173068024062934,
+      "gross_pnl": 17.02777614806018,
+      "fees": 0.7570861580518836,
+      "net_pnl": 16.270689990008243,
+      "ending_capital": 17.270689990008243,
+      "return_on_capital": 16.270689990008243,
+      "required_capital": 1.0,
+      "peak_cash_need": 0.0006797722501078574,
+      "final_equity": 17.270689990008243,
+      "CAGR": 1.5848572435064057,
+      "Sharpe": 4.731201129316792,
+      "max_drawdown": -0.13275560699580946,
+      "avg_equity": 10.548911347350938
+    },
+    "benchmarks": [
+      {
+        "benchmark": "buy_and_hold_BTCUSDT",
+        "CAGR": 0.309506529094006,
+        "Sharpe": 0.7935734619743865,
+        "max_drawdown": -0.5345572778683847,
+        "total_return": 1.2455514206226974
+      },
+      {
+        "benchmark": "equal_weight_basket",
+        "CAGR": -0.4646247818001705,
+        "Sharpe": 0.012975255332691314,
+        "max_drawdown": -0.9586138069832588,
+        "total_return": -0.8465472084935755
+      }
+    ]
+  },
+  "finished": "2026-11-08T17:42:09.577273+00:00",
+  "seconds": 516.1
+}
