@@ -67,6 +67,39 @@ outcome feeds back into how the capstone model should be built.
 
 ---
 
+## Course project
+
+The [course project](project/README.md) is an end-to-end algo-trading system on Binance
+USDT-M perpetual futures: 820 contracts downloaded from the Binance bulk archive, a
+unified hourly feature panel with 65 numeric features and six dummy families, seven
+model families, thirty-one trading strategies simulated against buy-and-hold
+benchmarks, and a cron job that re-runs the whole pipeline and places the daily orders.
+
+| Result | Number |
+|---|---|
+| Panel | 3,942,000 hourly observations, 831,241 modelling rows, 150 contracts |
+| Best strategy, full panel | 158% a year, Sharpe 4.73, drawdown -13% |
+| Buy and hold Bitcoin | 31% a year, Sharpe 0.79, drawdown -53% |
+| Equal-weighted basket of the panel | -46% a year |
+| Best strategy, test period only | 28% a year, Sharpe 1.79, drawdown -2.9% |
+| Best model out of sample | random forest, AUC 0.584 (0.394 base rate) |
+
+The out-of-sample edge is thin and the project says so: the models are useful, the
+strategy beats the market it trades, and the result that survives the test period is a
+few tens of percent a year rather than the headline number of the full panel.
+
+```
+project/            the course project
+├── src/            config, download, features, models, simulation, broker, monitor
+├── notebooks/      the end-to-end notebook
+├── tests/          unit tests for the simulator and the threshold search
+├── output/         the results of the last run
+├── Makefile        make pipeline / make dashboard / make orders
+└── Dockerfile      container image for the same pipeline
+```
+
+---
+
 ## Repository layout
 
 ```

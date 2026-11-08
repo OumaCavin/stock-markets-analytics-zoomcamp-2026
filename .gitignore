@@ -10,9 +10,11 @@ venv/
 
 # Data files (fetch them with scripts/download_data.py)
 data/
+project/data/
 *.parquet
 *.parquet.brotli
 *.npy
+project/models/
 
 # OS
 .DS_Store
