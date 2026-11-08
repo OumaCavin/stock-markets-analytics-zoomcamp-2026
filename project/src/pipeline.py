@@ -248,7 +248,7 @@ def run(
     log: dict = {
         "regime": regime,
         "stages": wanted,
-        "started": pd.Timestamp.utcnow().isoformat(),
+        "started": pd.Timestamp.now("UTC").isoformat(),
     }
 
     if regime in ("download", "incremental"):
@@ -508,9 +508,14 @@ def run(
             "benchmarks": benchmarks.to_dict(orient="records"),
         }
 
-    log["finished"] = pd.Timestamp.utcnow().isoformat()
+    log["finished"] = pd.Timestamp.now("UTC").isoformat()
     log["seconds"] = round(time.time() - started, 1)
-    (C.OUTPUT_DIR / "run_manifest.json").write_text(json.dumps(log, indent=2, default=str))
+    # The manifest is merged rather than overwritten, so that a run of one stage keeps
+    # the description of the stages that were not part of it.
+    manifest_path = C.OUTPUT_DIR / "run_manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    manifest.update(log)
+    manifest_path.write_text(json.dumps(manifest, indent=2, default=str))
     print(f"[6/6] done in {log['seconds']}s -> {C.OUTPUT_DIR}", flush=True)
     return log
 

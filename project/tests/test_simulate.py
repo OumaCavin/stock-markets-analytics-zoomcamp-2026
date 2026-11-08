@@ -158,5 +158,27 @@ def test_strategy_columns_include_the_expected_families():
     assert strategies["pred_manual_funding"].sum() == len(panel)
 
 
+def test_a_saved_estimator_reloads_and_predicts_the_same(tmp_path, monkeypatch):
+    """The estimator written to disk has to give back exactly what it gave before."""
+    import numpy as np
+    from sklearn.tree import DecisionTreeClassifier
+
+    from src import models
+
+    rng = np.random.default_rng(7)
+    X = rng.normal(size=(400, 6))
+    y = (X[:, 0] + rng.normal(scale=0.3, size=400) > 0).astype("int8")
+    model = DecisionTreeClassifier(max_depth=3, random_state=42).fit(X, y)
+
+    monkeypatch.setattr(models.C, "MODEL_DIR", tmp_path)
+    path = models.save_estimator("tree", model, {"max_depth": 3}, {}, [f"f{i}" for i in range(6)])
+    assert path.exists()
+
+    payload = models.load_estimator("tree")
+    assert payload["columns"] == [f"f{i}" for i in range(6)]
+    assert payload["params"] == {"max_depth": 3}
+    assert np.allclose(model.predict_proba(X)[:, 1], payload["model"].predict_proba(X)[:, 1])
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))

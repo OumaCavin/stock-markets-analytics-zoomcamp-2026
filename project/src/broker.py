@@ -51,7 +51,7 @@ class Order:
     price: float | None = None
     strategy: str = ""
     probability: float | None = None
-    timestamp: str = field(default_factory=lambda: pd.Timestamp.utcnow().isoformat())
+    timestamp: str = field(default_factory=lambda: pd.Timestamp.now("UTC").isoformat())
     broker: str = "paper"
     status: str = "NEW"
     note: str = ""

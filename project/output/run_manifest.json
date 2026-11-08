@@ -3,13 +3,15 @@
   "stages": [
     "strategies"
   ],
-  "started": "2026-11-08T17:44:28.754204+00:00",
+  "started": "2026-11-08T20:41:52.095825+00:00",
   "universe": {
     "considered": 369,
     "selected": 150,
     "dropped_illiquid": 104,
     "dropped_short_history": 0
   },
+  "finished": "2026-11-08T20:45:37.125403+00:00",
+  "seconds": 225.0,
   "model_families": [
     "decision_tree",
     "lightgbm",
@@ -113,7 +115,5 @@
         "total_return": -0.8465472084935755
       }
     ]
-  },
-  "finished": "2026-11-08T17:53:14.884671+00:00",
-  "seconds": 526.1
+  }
 }

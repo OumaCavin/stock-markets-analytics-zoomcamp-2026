@@ -25,7 +25,7 @@
         "auc": 0.583976240005225
       }
     },
-    "fit_seconds": 199.8
+    "fit_seconds": 108.4
   },
   "xgboost": {
     "params": {
@@ -53,7 +53,7 @@
         "auc": 0.5437870305838051
       }
     },
-    "fit_seconds": 129.4
+    "fit_seconds": 62.0
   },
   "lightgbm": {
     "params": {
@@ -81,7 +81,7 @@
         "auc": 0.5534588700390144
       }
     },
-    "fit_seconds": 138.6
+    "fit_seconds": 67.9
   },
   "logistic_regression": {
     "params": {
@@ -107,7 +107,7 @@
         "auc": 0.5262127974299005
       }
     },
-    "fit_seconds": 49.8
+    "fit_seconds": 27.1
   },
   "mlp": {
     "params": {
@@ -137,7 +137,7 @@
         "auc": 0.5134676508030593
       }
     },
-    "fit_seconds": 80.3
+    "fit_seconds": 35.1
   },
   "ridge_regression": {
     "params": {
@@ -163,7 +163,7 @@
         "auc": 0.4901855587932418
       }
     },
-    "fit_seconds": 34.8
+    "fit_seconds": 15.8
   },
   "decision_tree": {
     "params": {
@@ -190,6 +190,6 @@
         "auc": 0.49737549001395437
       }
     },
-    "fit_seconds": 56.8
+    "fit_seconds": 31.9
   }
 }

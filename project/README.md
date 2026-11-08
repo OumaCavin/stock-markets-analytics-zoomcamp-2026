@@ -282,7 +282,42 @@ on 80,000, because the panel and the design matrix have to fit in the memory of 
 machine at the same time. The caps are in `src/models.py` and are the only reason the
 numbers here are not the numbers of a larger machine.
 
-### 4.2 The probability threshold does not survive the out-of-sample period
+### 4.2 The trained models are downloadable
+
+Every fitted estimator is written to `models/<family>.joblib` when the training stage
+runs, and the files are small enough to live in the repository:
+
+| File | Size | Valid AUC | Test AUC |
+|---|---|---|---|
+| `models/decision_tree.joblib` | 8 KB | 0.506 | 0.497 |
+| `models/random_forest.joblib` | 485 KB | 0.553 | 0.584 |
+| `models/xgboost.joblib` | 113 KB | 0.539 | 0.544 |
+| `models/lightgbm.joblib` | 458 KB | 0.548 | 0.554 |
+| `models/logistic_regression.joblib` | 11 KB | 0.570 | 0.526 |
+| `models/ridge_regression.joblib` | 11 KB | 0.530 | 0.490 |
+| `models/mlp.joblib` | 262 KB | 0.511 | 0.514 |
+
+Each file holds the estimator, the hyper-parameters it was fitted with, its scores, the
+321 feature columns in the order they were built, the dates of the temporal split and
+the target it was trained on, so a model can be used without the pipeline around it:
+
+```python
+import joblib
+
+payload = joblib.load("models/random_forest.joblib")
+model, columns = payload["model"], payload["columns"]
+
+# The features have to be built in the same order the model was fitted on.
+frame = build_features(new_bars)[columns]
+probabilities = model.predict_proba(frame.to_numpy(dtype="float32"))[:, 1]
+```
+
+`python -m src.models --list` prints the same table with the scores and the file sizes,
+and `python -m src.models` refits the zoo and rewrites the files. The round trip is
+checked by a unit test: the reloaded estimator returns exactly the probabilities the
+live one did.
+
+### 4.3 The probability threshold does not survive the out-of-sample period
 
 The threshold is chosen as a quantile of the validation probabilities, and the
 absolute values it produces are high (0.87 for the ensemble). Applied unchanged to the

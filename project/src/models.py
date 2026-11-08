@@ -23,6 +23,7 @@ import time
 from dataclasses import dataclass, field
 from pathlib import Path
 
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
@@ -507,6 +508,11 @@ def train_all(dataset: Dataset, families: list[str] | None = None, tune: bool = 
         scores["valid"] = score_blocks(model, dataset.row_blocks(dataset.valid), dataset.y[dataset.valid])
         scores["test"] = score_blocks(model, dataset.row_blocks(dataset.test), dataset.y[dataset.test])
         _trim_memory()
+        # The fitted estimator is written to disk, so that the model can be used and
+        # downloaded without training it again.
+        estimator_path = save_estimator(name, model, params, scores, dataset.columns)
+        print(f"                   saved to {estimator_path.name}", flush=True)
+
         # Every family writes its own predictions file, so the model zoo can be
         # trained in several processes and merged afterwards.
         family_frame = predict_family(model, dataset)
@@ -587,6 +593,48 @@ def result_payload(results: dict) -> dict:
     return payload
 
 
+def save_estimator(name: str, model, params: dict, scores: dict, columns: list[str]) -> Path:
+    """Persist a fitted estimator, so it can be reloaded without refitting it.
+
+    The payload carries the estimator itself, the hyper-parameters it was fitted with,
+    its scores, the feature columns in the order they were built, and the dates of the
+    temporal split. That is everything a reader needs to apply the model to a new bar,
+    and it is what makes the model downloadable rather than merely reproducible.
+    """
+    path = C.MODEL_DIR / f"{name}.joblib"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    joblib.dump(
+        {
+            "name": name,
+            "model": model,
+            "params": params,
+            "scores": scores,
+            "columns": list(columns),
+            "train_end": C.TRAIN_END,
+            "valid_end": C.VALID_END,
+            "horizon_hours": C.HORIZON_HOURS,
+            "target": C.TARGET,
+            "trained_at": pd.Timestamp.now("UTC").isoformat(),
+        },
+        path,
+        compress=3,
+    )
+    return path
+
+
+def load_estimator(name: str, path: Path | None = None) -> dict:
+    """Load a persisted estimator back."""
+    path = path or (C.MODEL_DIR / f"{name}.joblib")
+    if not path.exists():
+        raise FileNotFoundError(f"no saved model at {path}; run the training stage first")
+    return joblib.load(path)
+
+
+def model_files() -> list[Path]:
+    """Every persisted estimator, with its size on disk."""
+    return sorted(C.MODEL_DIR.glob("*.joblib"))
+
+
 def save_results(results: dict, path: Path) -> None:
     """Persist the scores and parameters, without the fitted estimators."""
     payload = {
@@ -607,15 +655,33 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Train the model zoo on the crypto panel")
     ap.add_argument("--panel", default=str(C.CACHE_DIR / "panel.parquet"))
     ap.add_argument("--out", default=str(C.OUTPUT_DIR / "model_scores.json"))
+    ap.add_argument(
+        "--list",
+        action="store_true",
+        help="list the persisted estimators and their scores, then exit",
+    )
     args = ap.parse_args()
 
-    from src.build_dataset import add_month_wom, feature_columns
+    if args.list:
+        for path in model_files():
+            payload = load_estimator(path.stem, path)
+            scores = payload.get("scores", {})
+            valid = scores.get("valid", {})
+            test = scores.get("test", {})
+            size_mb = path.stat().st_size / (1024 * 1024)
+            print(
+                f"{payload['name']:22s} valid auc {valid.get('auc', float('nan')):.4f} "
+                f"test auc {test.get('auc', float('nan')):.4f} "
+                f"{size_mb:6.1f} MB  {path}"
+            )
+    else:
+        from src.build_dataset import add_month_wom, feature_columns
 
-    panel = pd.read_parquet(args.panel)
-    panel = add_month_wom(panel)
-    numeric, dummies = feature_columns(panel)
-    dataset = build_dataset(panel, numeric, dummies)
-    print(f"features: {dataset.meta}, rows {dataset.sizes}")
-    results = train_all(dataset)
-    save_results(results, Path(args.out))
-    print(f"written to {args.out}")
+        panel = pd.read_parquet(args.panel)
+        panel = add_month_wom(panel)
+        numeric, dummies = feature_columns(panel)
+        dataset = build_dataset(panel, numeric, dummies)
+        print(f"features: {dataset.meta}, rows {dataset.sizes}")
+        results = train_all(dataset)
+        save_results(results, Path(args.out))
+        print(f"written to {args.out}")
