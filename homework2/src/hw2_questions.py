@@ -13,10 +13,29 @@ import json
 import re
 from pathlib import Path
 
+
+import warnings
+
 import numpy as np
 import pandas as pd
 import yfinance as yf
 from curl_cffi import requests
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def show(path) -> str:
+    """Print a path relative to the repository root.
+
+    The repository is cloned at a different place on every machine, so an absolute
+    path in the output says nothing to a reader. The relative path is the same
+    everywhere and is the one that exists in the repository.
+    """
+    try:
+        return str(Path(path).resolve().relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
+
 
 OUTPUT_DIR = Path(__file__).resolve().parents[1] / "output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -178,9 +197,14 @@ def question_2_and_3():
     stocks_df["Sharpe_ret"] = (stocks_df["growth_252d"] - 0.05) / stocks_df["volatility_ret"]
 
     as_of = stocks_df[stocks_df["Date"] == pd.Timestamp(AS_OF)]
-    stats = as_of[["growth_252d", "volatility", "Sharpe"]].describe()
-    median_sharpe = float(stats.loc["50%", "Sharpe"])
-    median_sharpe_ret = float(as_of["Sharpe_ret"].describe().loc["50%"])
+    # A ticker with no volatility yet gives a NaN Sharpe ratio. The standard deviation
+    # of a column with NaNs raises a RuntimeWarning inside pandas, which says nothing
+    # useful here, so it is turned off.
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)
+        stats = as_of[["growth_252d", "volatility", "Sharpe"]].describe()
+        median_sharpe = float(stats.loc["50%", "Sharpe"])
+        median_sharpe_ret = float(as_of["Sharpe_ret"].describe().loc["50%"])
 
     # ---- Question 3: fixed months holding strategy -------------------------
     wide = stocks_df.pivot(index="Date", columns="Ticker", values="Close")
@@ -298,4 +322,4 @@ if __name__ == "__main__":
 
     with open(OUTPUT_DIR / "hw2_answers.json", "w") as f:
         json.dump(answers, f, indent=2, default=str)
-    print("\nSaved:", OUTPUT_DIR / "hw2_answers.json")
+    print("\nSaved:", show(OUTPUT_DIR / "hw2_answers.json"))

@@ -524,4 +524,4 @@ if __name__ == "__main__":
     print(panel.shape)
     print(panel[C.TARGET].value_counts())
     panel.to_parquet(args.out)
-    print(f"written to {args.out}")
+    print(f"written to {C.display_path(args.out)}")

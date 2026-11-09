@@ -271,7 +271,7 @@ if __name__ == "__main__":
 
     if args.dashboard or not args.telegram:
         path = build_dashboard(panel, strategies, exact, model_scores)
-        print(f"dashboard written to {path}")
+        print(f"dashboard written to {C.display_path(path)}")
 
     if args.telegram:
         result = send_telegram(daily_summary(panel, strategies, exact))

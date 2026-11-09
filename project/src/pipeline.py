@@ -516,7 +516,7 @@ def run(
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     manifest.update(log)
     manifest_path.write_text(json.dumps(manifest, indent=2, default=str))
-    print(f"[6/6] done in {log['seconds']}s -> {C.OUTPUT_DIR}", flush=True)
+    print(f"[6/6] done in {log['seconds']}s -> {C.display_path(C.OUTPUT_DIR)}", flush=True)
     return log
 
 if __name__ == "__main__":

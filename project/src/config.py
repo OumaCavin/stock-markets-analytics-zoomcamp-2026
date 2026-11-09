@@ -30,6 +30,19 @@ CACHE_DIR = DATA_DIR / "cache"
 OUTPUT_DIR = Path(os.environ.get("PROJECT_OUTPUT_DIR", PROJECT_DIR / "output"))
 MODEL_DIR = Path(os.environ.get("PROJECT_MODEL_DIR", PROJECT_DIR / "models"))
 
+def display_path(path) -> str:
+    """Print a path relative to the repository root.
+
+    The repository is cloned at a different place on every machine, so an absolute
+    path in the output says nothing to a reader. The relative path is the same
+    everywhere and is the one that exists in the repository.
+    """
+    try:
+        return str(Path(path).resolve().relative_to(REPO_DIR))
+    except ValueError:
+        return str(path)
+
+
 for _d in (DATA_DIR, RAW_DIR, MACRO_DIR, SENTIMENT_DIR, CACHE_DIR, OUTPUT_DIR, MODEL_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 

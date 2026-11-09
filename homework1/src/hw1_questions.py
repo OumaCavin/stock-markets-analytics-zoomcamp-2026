@@ -13,10 +13,27 @@ import json
 import re
 from pathlib import Path
 
+
 import numpy as np
 import pandas as pd
 import yfinance as yf
 from curl_cffi import requests as requests  # browser TLS fingerprint -> not blocked by Wikipedia
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def show(path) -> str:
+    """Print a path relative to the repository root.
+
+    The repository is cloned at a different place on every machine, so an absolute
+    path in the output says nothing to a reader. The relative path is the same
+    everywhere and is the one that exists in the repository.
+    """
+    try:
+        return str(Path(path).resolve().relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
+
 
 OUTPUT_DIR = Path(__file__).resolve().parents[1] / "output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -354,4 +371,4 @@ if __name__ == "__main__":
 
     with open(OUTPUT_DIR / "hw1_answers.json", "w") as f:
         json.dump(answers, f, indent=2, default=str)
-    print("\nSaved:", OUTPUT_DIR / "hw1_answers.json")
+    print("\nSaved:", show(OUTPUT_DIR / "hw1_answers.json"))

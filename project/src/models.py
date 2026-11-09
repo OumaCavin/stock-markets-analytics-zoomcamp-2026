@@ -672,7 +672,7 @@ if __name__ == "__main__":
             print(
                 f"{payload['name']:22s} valid auc {valid.get('auc', float('nan')):.4f} "
                 f"test auc {test.get('auc', float('nan')):.4f} "
-                f"{size_mb:6.1f} MB  {path}"
+                f"{size_mb:6.1f} MB  {C.display_path(path)}"
             )
     else:
         from src.build_dataset import add_month_wom, feature_columns
@@ -684,4 +684,4 @@ if __name__ == "__main__":
         print(f"features: {dataset.meta}, rows {dataset.sizes}")
         results = train_all(dataset)
         save_results(results, Path(args.out))
-        print(f"written to {args.out}")
+        print(f"written to {C.display_path(args.out)}")

@@ -49,7 +49,7 @@ from src import build_dataset, config as C, models, simulate
 pd.set_option("display.width", 140)
 pd.set_option("display.max_columns", 40)
 
-print("project directory:", C.PROJECT_DIR)
+print("project directory:", C.display_path(C.PROJECT_DIR))
 print("panel window:", C.START_MONTH, "->", C.END_MONTH)
 print("horizon:", C.HORIZON_HOURS, "hours | fee:", C.FEE_RATE, "| trade size:", C.TRADE_SIZE_USD)""",
     ),

@@ -49,7 +49,7 @@ REPO = repo_root(Path.cwd().resolve())
 HW = REPO / "homework{N}"
 sys.path.insert(0, str(HW / "src"))
 
-print("repository :", REPO)
+print("repository :", REPO.name)
 print("python     :", sys.version.split()[0])
 '''
 
@@ -90,7 +90,7 @@ for key, value in answers.items():
             print("  " + field + ": " + str(item))
 
 print()
-print("Saved:", out)
+print("Saved:", out.relative_to(REPO))
 '''
 
 
