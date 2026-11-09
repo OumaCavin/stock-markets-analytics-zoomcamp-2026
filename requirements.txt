@@ -20,3 +20,8 @@ scikit-learn==1.7.2
 # Stats
 scipy>=1.11
 statsmodels>=0.14
+
+# Notebooks (the research write-up of each homework)
+nbformat>=5.10
+nbconvert>=7.16
+ipykernel>=6.29

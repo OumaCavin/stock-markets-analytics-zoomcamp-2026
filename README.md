@@ -103,16 +103,21 @@ project/            the course project
 ## Repository layout
 
 ```
-homework1/          Intro and data sources   -> src/hw1_questions.py,  output/hw1_answers.json
-homework2/          One dataframe             -> src/hw2_questions.py,  output/hw2_answers.json
-homework3/          The model                 -> src/hw3_questions.py,  output/hw3_answers.json
-homework4/          Trading system            -> src/hw4_questions.py,  src/merge_results.py
-homework5/          Three research ideas      -> README.md
+homework1/          Intro and data sources   -> notebooks/hw1_research.ipynb, src/hw1_questions.py,  output/hw1_answers.json
+homework2/          One dataframe             -> notebooks/hw2_research.ipynb, src/hw2_questions.py,  output/hw2_answers.json
+homework3/          The model                 -> notebooks/hw3_research.ipynb, src/hw3_questions.py,  output/hw3_answers.json
+homework4/          Trading system            -> notebooks/hw4_research.ipynb, src/hw4_questions.py,  src/merge_results.py
+homework5/          Three research ideas      -> notebooks/hw5_research.ipynb, README.md
 scripts/            download_data.py - fetches the two Google Drive parquet files
+                     build_homework_notebooks.py - builds the five homework notebooks
 ```
 
 Each homework directory has a `README.md` with the full answer, the method, the numbers
-and the reasoning behind the exploratory questions.
+and the reasoning behind the exploratory questions, and a notebook that is the research
+write-up of the assignment: the question, the method, the code and the outcome, with
+the outputs stored in the file so that the result can be read without running anything.
+The notebooks call the functions of the `src` scripts rather than copying them, so
+there is one implementation of each question.
 
 ## Reproducing
 

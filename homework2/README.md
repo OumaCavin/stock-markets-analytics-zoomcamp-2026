@@ -1,12 +1,22 @@
 # Homework 2 — One Dataframe
 
-Scripts: [`src/hw2_questions.py`](src/hw2_questions.py) · Output: [`output/hw2_answers.json`](output/hw2_answers.json)
+Notebook: [`notebooks/hw2_research.ipynb`](notebooks/hw2_research.ipynb) · Scripts: [`src/hw2_questions.py`](src/hw2_questions.py) · Output: [`output/hw2_answers.json`](output/hw2_answers.json)
 
 Run:
 
 ```bash
 python scripts/download_data.py          # once, for the RSI parquet file
 python homework2/src/hw2_questions.py
+```
+
+The notebook is the research write-up of the assignment: the question, the method, the
+code and the outcome, with the outputs stored in the file so the result can be read
+without running anything. It calls the functions of the script above, so there is one
+implementation of each question:
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace \
+  homework2/notebooks/hw2_research.ipynb
 ```
 
 ## Answers

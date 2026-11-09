@@ -232,44 +232,61 @@ def run_scenario(label, reduced_dummies=False, redefine_target=False,
     return sim, n_features
 
 
-def main():
-    scenario = sys.argv[1] if len(sys.argv) > 1 else "all"
-    out = {}
+def run_and_save(scenario: str) -> dict:
+    """Run one scenario and write its result file in the shape the merge expects.
 
-    if scenario in ("all", "baseline"):
+    The three scenarios are run one at a time because each of them fits a forest on
+    the full panel, and the notebook calls this function once per scenario for the
+    same reason.
+    """
+    if scenario == "baseline":
         sim, n = run_scenario("BASELINE (301 features)")
-        out["baseline"] = {
-            "n_features": n,
-            "pred10_cagr": float(sim.loc["pred10_rf_best_rule_55", "CAGR"]),
-            "simulation": json.loads(sim.reset_index().to_json(orient="records")),
+        out = {
+            "baseline": {
+                "n_features": n,
+                "pred10_cagr": float(sim.loc["pred10_rf_best_rule_55", "CAGR"]),
+                "simulation": json.loads(sim.reset_index().to_json(orient="records")),
+            }
         }
         print("BASELINE pred10 CAGR:", out["baseline"]["pred10_cagr"], flush=True)
-
-    if scenario in ("all", "reduced"):
+    elif scenario == "reduced":
         sim, n = run_scenario("REDUCED (208 features)", reduced_dummies=True,
                               extra_rf_thresholds=True)
-        out["reduced"] = {
-            "n_features": n,
-            "pred10_cagr": float(sim.loc["pred10_rf_best_rule_55", "CAGR"]),
-            "simulation": json.loads(sim.reset_index().to_json(orient="records")),
+        out = {
+            "reduced": {
+                "n_features": n,
+                "pred10_cagr": float(sim.loc["pred10_rf_best_rule_55", "CAGR"]),
+                "simulation": json.loads(sim.reset_index().to_json(orient="records")),
+            }
         }
         print("REDUCED pred10 CAGR:", out["reduced"]["pred10_cagr"], flush=True)
-
-    if scenario in ("all", "redefined"):
-        sim, n = run_scenario("REDEFINED TARGET (>1.022), 301 features",
+    elif scenario == "redefined":
+        sim, n = run_scenario("REDEFINED TARGET (>1.022), 301 features)",
                               redefine_target=True)
         row = sim.loc["pred5_clf_10"]
-        out["redefined"] = {
-            "n_features": n,
-            "pred5_clf_10": {k: (None if pd.isna(v) else float(v))
-                              for k, v in row.to_dict().items()},
+        out = {
+            "redefined": {
+                "n_features": n,
+                "pred5_clf_10": {k: (None if pd.isna(v) else float(v))
+                                 for k, v in row.to_dict().items()},
+            }
         }
         print("Q3 pred5_clf_10:", out["redefined"]["pred5_clf_10"], flush=True)
+    else:
+        raise ValueError(f"unknown scenario: {scenario}")
 
     path = OUTPUT_DIR / f"hw4_{scenario}.json"
     with open(path, "w") as f:
         json.dump(out, f, indent=2, default=str)
     print("Saved:", path, flush=True)
+    return out
+
+
+def main():
+    scenario = sys.argv[1] if len(sys.argv) > 1 else "all"
+    for name in ("baseline", "reduced", "redefined"):
+        if scenario in ("all", name):
+            run_and_save(name)
 
 
 if __name__ == "__main__":

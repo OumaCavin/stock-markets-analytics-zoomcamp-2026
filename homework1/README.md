@@ -1,11 +1,21 @@
 # Homework 1 — Intro and Data Sources
 
-Scripts: [`src/hw1_questions.py`](src/hw1_questions.py) · Output: [`output/hw1_answers.json`](output/hw1_answers.json)
+Notebook: [`notebooks/hw1_research.ipynb`](notebooks/hw1_research.ipynb) · Scripts: [`src/hw1_questions.py`](src/hw1_questions.py) · Output: [`output/hw1_answers.json`](output/hw1_answers.json)
 
 Run:
 
 ```bash
 python homework1/src/hw1_questions.py
+```
+
+The notebook is the research write-up of the assignment: the question, the method, the
+code and the outcome, with the outputs stored in the file so the result can be read
+without running anything. It calls the functions of the script above, so there is one
+implementation of each question:
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace \
+  homework1/notebooks/hw1_research.ipynb
 ```
 
 ## Answers

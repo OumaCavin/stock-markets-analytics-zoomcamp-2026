@@ -1,12 +1,22 @@
 # Homework 3 — The Model
 
-Scripts: [`src/hw3_questions.py`](src/hw3_questions.py) · Output: [`output/hw3_answers.json`](output/hw3_answers.json)
+Notebook: [`notebooks/hw3_research.ipynb`](notebooks/hw3_research.ipynb) · Scripts: [`src/hw3_questions.py`](src/hw3_questions.py) · Output: [`output/hw3_answers.json`](output/hw3_answers.json)
 
 Run:
 
 ```bash
 python scripts/download_data.py                 # once
 python homework3/src/hw3_questions.py
+```
+
+The notebook is the research write-up of the assignment: the question, the method, the
+code and the outcome, with the outputs stored in the file so the result can be read
+without running anything. It calls the functions of the script above, so there is one
+implementation of each question:
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace \
+  homework3/notebooks/hw3_research.ipynb
 ```
 
 Built on the Module 03 Colab notebook, with the month-of-week dummies added as the
@@ -87,9 +97,14 @@ Each depth is fitted on TRAIN + VALIDATION and scored by precision on TEST
 
 | Depth | 1 | 2 | 3 | **4** | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| TEST precision | 0.5701 | 0.6225 | 0.5720 | **0.6292** | 0.5991 | 0.5966 | 0.6229 | 0.6194 | 0.5956 | 0.5993 | 0.5980 | 0.5744 |
+| TEST precision | 0.5701 | 0.6225 | 0.5720 | **0.6292** | 0.5991 | 0.5966 | 0.6229 | 0.6194 | 0.5956 | 0.5993 | 0.5980 | 0.5837 |
 
 **Answer: 4** — `max_depth=4` gives the best TEST precision (0.6292).
+
+The table is the one produced by the pinned `scikit-learn==1.7.2`. The last depth moves
+by about one point on a newer scikit-learn (0.5837 against 0.5744), because the tree
+breaks a tie between two features differently; the best depth and its precision do not
+move.
 
 Depths 1–4 reproduce the reference values published in the Module 04 notebook
 (`{1: 0.5701, 2: 0.6225, 3: 0.572, 4: 0.6292, …}`) exactly, which confirms the feature

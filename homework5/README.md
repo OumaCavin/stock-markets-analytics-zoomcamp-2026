@@ -1,8 +1,19 @@
 # Homework 5 — Automation & New Ideas (2026 cohort)
 
+Notebook: [`notebooks/hw5_research.ipynb`](notebooks/hw5_research.ipynb)
+
 Three distinct stock research ideas. Each one follows the structure required by the
 assignment: market and scope, investment thesis, potential edge, data and sources,
 research approach, and validation and risks.
+
+The notebook below is the write-up of the three ideas: the question, the hypothesis, the
+data, the method, the test that would prove the idea wrong, and the collection code
+that would build the panel.
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace \
+  homework5/notebooks/hw5_research.ipynb
+```
 
 The three ideas deliberately differ in **economic mechanism**, **market**, **data source**
 and **investment horizon**:

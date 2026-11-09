@@ -1,6 +1,6 @@
 # Homework 4 — Trading System
 
-Scripts: [`src/hw4_questions.py`](src/hw4_questions.py) · [`src/merge_results.py`](src/merge_results.py) · Output: [`output/hw4_answers.json`](output/hw4_answers.json)
+Notebook: [`notebooks/hw4_research.ipynb`](notebooks/hw4_research.ipynb) · Scripts: [`src/hw4_questions.py`](src/hw4_questions.py) · Output: [`output/hw4_answers.json`](output/hw4_answers.json)
 
 Run (each scenario in its own process — the Random Forest is memory-hungry):
 
@@ -10,6 +10,16 @@ python homework4/src/hw4_questions.py baseline
 python homework4/src/hw4_questions.py reduced
 python homework4/src/hw4_questions.py redefined
 python homework4/src/merge_results.py
+```
+
+The notebook is the research write-up of the assignment: the question, the method, the
+code and the outcome, with the outputs stored in the file so the result can be read
+without running anything. It calls the functions of the script above, so there is one
+implementation of each question:
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace \
+  homework4/notebooks/hw4_research.ipynb
 ```
 
 ## Answers
